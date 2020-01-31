@@ -6,7 +6,7 @@
     Descrip : Scrapes the Wiki page on the 2019-nCoV Wuhan Coronavirus
               Outbreak for the current reported cases
 #>
-
+    CLS
     $URL = "https://en.wikipedia.org/wiki/2019%E2%80%9320_Wuhan_coronavirus_outbreak"
     $Match = "*confirmed cases with*"
     $webClient = New-Object System.Net.Webclient
@@ -21,7 +21,7 @@
                 #Find the line with the case count on it
                 If ($Element -like $Match) {
                     #Clean the line up and return it
-                    $DataReturn = $Element.Replace("center>","")
+                    $DataReturn = $Element.Replace("center> ","")
                 Break
                 }
             }      
