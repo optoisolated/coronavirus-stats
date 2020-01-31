@@ -21,7 +21,7 @@
                 #Find the line with the case count on it
                 If ($Element -like $Match) {
                     #Clean the line up and return it
-                    $DataReturn = $Element.Replace("center> ","")
+                    $DataReturn = $Element.Replace("center>","").Trim()
                 Break
                 }
             }      
